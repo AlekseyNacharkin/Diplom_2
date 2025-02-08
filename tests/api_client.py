@@ -16,7 +16,7 @@ class APIClient:
         url = f"{self.BASE_URL}{endpoint}"
         return requests.post(url, json=data)
 
-    def delete_user(self,endpoint = "/api/auth/user"):
+    def delete_user(self,endpoint = "/api/auth/user",authorization=None):
         url = f"{self.BASE_URL}{endpoint}"
-        return requests.delete(url)
+        return requests.delete(url,headers={"Authorization": authorization})
 
